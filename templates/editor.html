@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit - {{ file_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Editando: <h1 style="color: green">{{ file_name }}</h1></h1>
+
+    <form id="fileForm" action="/save_content/{{ file_name }}" method="POST">
+        <label for="content">Conteúdo:</label><br>
+        <textarea id="content" name="content" rows="10" cols="80">{{ content }}</textarea><br><br>
+
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
